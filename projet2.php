@@ -30,19 +30,22 @@ width:50%;
 <th>
 Mois de l'annéee
 </th>
+<th>
+Nombre de jour
+</th>
 </tr>
         <?php
         require "projet2a.php";
       if (isset($_SESSION['boolChro']) && $_SESSION['boolChro'])  {   
         echo "<br><br> <h2>Mois de l'année dans l'ordre chronologique</h2><br><br>";          
       for ($i=1; $i < count($_SESSION['Mois']); $i++) { 
-        echo"<tr><td>{$_SESSION["Mois"][$i]} {$_SESSION["Mois"][0][$i]} jours. </td></tr>";
+        echo"<tr><td>{$_SESSION["Mois"][$i]}</td><td> {$_SESSION["Mois"][0][$i]} jours. </td></tr>";
       }
           }
           else   if ( isset($_SESSION['boolChro']) && !$_SESSION['boolChro'] ){   
             echo "<br><br> <h2>Mois de l'année dans l'ordre anti-chronologique</h2><br><br>";          
           for ($i=count($_SESSION['Mois'])-1; $i >=1; $i--) { 
-            echo"<tr><td>{$_SESSION["Mois"][$i]}  {$_SESSION["Mois"][0][$i]} jours. </td></tr>";
+            echo"<tr><td>{$_SESSION["Mois"][$i]}  </td> <td> {$_SESSION["Mois"][0][$i]} jours. </td></tr>";
           }
               }
 
