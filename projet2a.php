@@ -23,10 +23,10 @@ while ($i <= 12) {
 $nbreJourMois=0;
 $tabMoisBis=array();
 
-if($_POST['chro']==1){
+if(isset($_POST["chro"]) && $_POST['chro']==1){
 $_SESSION["boolChro"]=true;
 }
-else if (($_POST['chro']==2))
+else if (isset($_POST["chro"]) &&($_POST['chro']==2))
 {$_SESSION["boolChro"]=false;}
 
 
@@ -44,4 +44,6 @@ else if (($_POST['chro']==2))
     }
     $_SESSION["Mois"]=$tabMois;
  
-
+if  (isset($_POST["choixMois"]) ){
+    $_SESSION["nbreJourMois"]=$_POST["choixMois"];
+}

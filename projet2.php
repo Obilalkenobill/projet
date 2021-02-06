@@ -17,9 +17,29 @@ require "projet2a.php";
 <style>
 .table{
 text-align:center;
-width:50%;
+width:100%;
 }
+.parent {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 {
+    border:solid grey 2.5px;
+     grid-area: 1 / 1 / 2 / 2; }
+.div2 { 
+    margin-top:50%;
+    border:solid grey 2.5px;
+    grid-area: 1 / 2 / 2 / 3; }
+    select{
+        width:50%;
+    }
 </style>
+<div class="parent">
+<div  class="div1">
 <form action="projet2.php" method="POST">
 <p>Ordre Chronologique </p><input type="radio" name="chro" value="1" ><br>
 <p>Ordre Non Chronologique</p><input type="radio" name="chro" value="2"><br>
@@ -53,6 +73,27 @@ Nombre de jour
        ?>
         
           </table>
-    
+          </div>
+          <border>
+<div class="div2">
+<form action="projet2.php" method="POST">
+<label>Découvrez combien il y'a de jour dans le mois de</label>
+          <select name="choixMois" class="form-select" aria-label="Default select example">
+        
+        <?php 
+        echo "<option  value=\"\"></option>";
+         for ($i=1 ; $i < count($_SESSION['Mois']); $i++) { 
+        echo "<option  value=\"{$_SESSION["Mois"][0][$i]}\">{$_SESSION["Mois"][$i]}</option>";
+         }
+        ?>
+        </select>
+        <input type="submit">
+          </form>
+         <?php 
+         if (isset($_POST["choixMois"])&& isset($_SESSION["nbreJourMois"])){ echo "<h2>Dans le mois que vous avez choisis il y'a {$_SESSION["nbreJourMois"]} jours </h2>";}
+         ?>
+</div>
+</div>
+<a href="projet1.php">Passez aux tableau de chiffres. </a>
 </body>
 </html>
