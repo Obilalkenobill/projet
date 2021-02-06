@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<title>Les chiffres</title>
 </head>
 <body>
 <style>
@@ -44,6 +44,7 @@ table{
         Cochez pour recharger la session <input type="checkbox" name="reload" value="1">
         <input type="submit">
           </form>
+          <a href="projet2.php">Passez aux calendrier. </a>
 <?php 
         if (isset($_POST["choix"])&& isset($_SESSION["choix"])){ echo "<h2>La réponse est {$_SESSION["choix"]} </h2>";}
          if (isset($_SESSION) && isset($_POST["reload"]) && $_POST["reload"]==1)
