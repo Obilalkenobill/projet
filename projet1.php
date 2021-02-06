@@ -44,7 +44,10 @@ table{
         Cochez pour recharger la session <input type="checkbox" name="reload" value="1">
         <input type="submit">
           </form>
-          <a href="projet2.php">Passez aux calendrier. </a>
+          <a href="projet2-3.php">Passez au calendrier. </a>
+          <br>
+          <a href="projet4.php">Passez aux températures d'un mois </a>
+
 <?php 
         if (isset($_POST["choix"])&& isset($_SESSION["choix"])){ echo "<h2>La réponse est {$_SESSION["choix"]} </h2>";}
          if (isset($_SESSION) && isset($_POST["reload"]) && $_POST["reload"]==1)
