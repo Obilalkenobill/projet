@@ -17,10 +17,10 @@ for ($i=1; $i < count ($tabTemp); $i++) {
 }
 $sommeTab=0;
 $moyenne=0;
-for ($i=0; $i <= 5 ; $i++) { 
+for ($i=0; $i <= count($tabTemp) ; $i++) { 
     $sommeTab=$sommeTab+$tabTemp[$i];
 }
-$moyenne=$sommeTab/count($tabTemp);
+$moyenne=$sommeTab/(count($tabTemp));
 $_SESSION["tmpMax"]=$tmpMax;
 $_SESSION["tmpMin"]=$tmpMin;
 $_SESSION["tmpMoy"]=$moyenne;
